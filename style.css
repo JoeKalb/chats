@@ -1,0 +1,44 @@
+body {
+  margin: 0px;
+  background-color: #17141f;
+}
+
+a {
+  color: lightgray;
+  font-family: sans-serif;
+  text-decoration: none;
+}
+
+.app {
+  height: 100vh;
+}
+
+#top-header {
+  height: 5%;
+  background-color: darkslateblue;
+}
+
+#chats {
+  height: calc(100% - 47.75px);
+  display: flex;
+  justify-content: space-around;
+}
+
+.streamer {
+  height: 100%;
+  width: auto;
+}
+
+.streamer-heading {
+  height: 30px;
+  text-align: center;
+  padding-top: calc(30px / 2);
+}
+
+.chat-iframe {
+  width: 100%;
+  height: calc(100% - 30px - (30px / 2));
+  border-width: 0px;
+}
+
+/*# sourceMappingURL=style.css.map */

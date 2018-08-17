@@ -1,0 +1,49 @@
+// colors
+$twitch_button_color: #6441a4;
+$twitch_dark_color: #17141f;
+
+//sizes
+$streamer_top_heading: 30px;
+
+body{
+  margin: 0px;
+  background-color: $twitch_dark_color;
+}
+
+a{
+  color: lightgray;
+  font-family: sans-serif;
+  text-decoration: none;
+}
+
+.app{
+  height: 100vh;
+}
+
+#top-header{
+  height: 5%;
+  background-color: darkslateblue;
+}
+
+#chats{
+  height: calc(100% - 47.75px);
+  display: flex;
+  justify-content: space-around;
+}
+
+.streamer{
+  height: 100%;
+  width: auto;
+}
+
+.streamer-heading{
+  height: #{$streamer_top_heading};
+  text-align: center;
+  padding-top: calc(#{$streamer_top_heading} / 2);
+}
+
+.chat-iframe{
+  width: 100%;
+  height: calc(100% - #{$streamer_top_heading} - (#{$streamer_top_heading} / 2));
+  border-width: 0px;
+}
