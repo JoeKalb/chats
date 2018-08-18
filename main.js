@@ -1,3 +1,9 @@
+const TWITCH_USERS_URL = 'https://api.twitch.tv/kraken/users?login=<USERNAMES>'
+const TWITCH_HEADERS = new Headers({
+  'Accept': 'application/vnd.twitchtv.v5+json',
+  'Client-ID': 'pzr3fq1hhuh0dy009wxe26ekr26g98'
+});
+
 let chatCount = {
   "count":0,
   "getCount": function() {
@@ -22,9 +28,10 @@ function getStreamer(){
 }
 
 async function checkAccount(name){
-  //let response = await fetch("https://api.twitch.tv/helix/users?login=" + name);
-  //let json = await response.json();
-  //console.log(json);
+  console.log(name)
+  let response = await fetch(TWITCH_USERS_URL.replace('<USERNAMES>', name), {headers: TWITCH_HEADERS});
+  let json = await response.json();
+  console.log(json)
   return true;
 }
 
@@ -54,13 +61,13 @@ function buildNewChat(name) {
   return streamerDiv;
 }
 
-async function renderChat(newChatDiv){
+function renderChat(newChatDiv){
   let newChatsWidthpx = 20 * chatCount.getCount();
 
   let newStreamerWidth = 100 / chatCount.getCount(); 
-  await document.getElementById("chats").appendChild(newChatDiv);
+  document.getElementById("chats").appendChild(newChatDiv);
   let allStreamers = document.getElementsByClassName("streamer")
-  for(div in allStreamers){
-    allStreamers[div].style.width = newStreamerWidth + "%";
+  for(let i = 0; i < allStreamers.length; ++i){
+    allStreamers[i].style.width = newStreamerWidth + "%";
   }
 }
