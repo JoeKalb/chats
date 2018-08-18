@@ -43,20 +43,20 @@ function buildNewChat(name) {
   let streamerHeadingDiv = document.createElement("div");
   streamerHeadingDiv.className = "streamer-heading";
   let aTag = document.createElement("a")
-  aTag.target = "_blank"
+  aTag.target = "_blank";
   aTag.href = "https://www.twitch.tv/" + name;
   aTag.innerHTML = name; // this will be display name later
   streamerHeadingDiv.appendChild(aTag);
 
   // chat
   let iframe = document.createElement("iframe");
-  iframe.className = "chat-iframe"
+  iframe.className = "chat-iframe";
   iframe.frameBorder = 0;
-  iframe.scrolling = "no"
-  iframe.src = "http://www.twitch.tv/embed/{name}/chat?darkpopout".replace("{name}", name)
+  iframe.scrolling = "no";
+  iframe.src = "http://www.twitch.tv/embed/{name}/chat?darkpopout".replace("{name}", name);
 
   streamerDiv.appendChild(streamerHeadingDiv);
-  streamerDiv.appendChild(iframe)
+  streamerDiv.appendChild(iframe);
 
   return streamerDiv;
 }
