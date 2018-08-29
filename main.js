@@ -53,7 +53,7 @@ function buildNewChat(name) {
   iframe.className = "chat-iframe";
   iframe.frameBorder = 0;
   iframe.scrolling = "no";
-  iframe.src = "http://www.twitch.tv/embed/{name}/chat?darkpopout".replace("{name}", name);
+  iframe.src = "https://www.twitch.tv/embed/{name}/chat?darkpopout".replace("{name}", name);
 
   streamerDiv.appendChild(streamerHeadingDiv);
   streamerDiv.appendChild(iframe);
